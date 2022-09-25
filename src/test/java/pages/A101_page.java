@@ -77,7 +77,5 @@ public class A101_page extends BasePage {
     @FindBy(xpath = "(//div[@data-type='masterpass'])[1]")
     public WebElement kartİleÖdeme;
 
-    //@FindBy(xpath = "(//div[@onclick='persona_PopupClose();'])[1]")
-    //public WebElement popUpPencere;
 
 }

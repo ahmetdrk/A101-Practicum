@@ -1,17 +1,15 @@
 package pages;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.BrowserUtils;
 import utilities.ConfigurationReader;
 import utilities.Driver;
-
-import java.sql.SQLOutput;
 
 import static org.openqa.selenium.Keys.ENTER;
 
@@ -123,6 +121,13 @@ public class StepDefinition {
         Assert.assertEquals(expectedResult1, actualResult1);
         System.out.println("Ödeme ekranına gidildiği doğrulandı.");
 
+        BrowserUtils.waitFor(2);
     }
+
+    @AfterMethod
+    public void tearDown() {
+        Driver.getDriver().close();
+    }
+
 }
 
